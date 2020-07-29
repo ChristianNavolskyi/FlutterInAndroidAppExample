@@ -1,0 +1,10 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../measurements/.android/include_flutter.groovy'
+))
+rootProject.name = "FlutterIntegration"
+
+include ':measurements'
+project(':measurements').projectDir = new File('../measurements')
